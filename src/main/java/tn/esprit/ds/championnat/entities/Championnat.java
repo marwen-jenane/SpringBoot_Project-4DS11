@@ -2,6 +2,7 @@ package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,4 +21,10 @@ public class Championnat {
     private String libelleC;
 
     private Integer annee;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Course> courses;
+
+    @OneToOne
+    private DetailChampionnat detailChampionnat;
 }

@@ -11,9 +11,12 @@ import lombok.*;
 public class DetailChampionnat {
 
     @Id
-    private String code;
+    private String idDetailChamp;
 
     private String description;
 
-    private String idDetailChamp;
+    private String code;
+
+    @OneToOne(mappedBy = "detailChampionnat")
+    private Championnat championnat;
 }

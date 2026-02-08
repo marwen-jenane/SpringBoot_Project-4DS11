@@ -3,6 +3,8 @@ package tn.esprit.ds.championnat.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -19,4 +21,11 @@ public class Equipe {
     private Integer nbPointsTotal;
 
     private Integer classementGeneral;
+
+    @OneToMany(mappedBy = "equipe")
+    private List<Pilote> pilotes;
+
+    @OneToMany(mappedBy = "equipe")
+    private List<Contrat> contrats;
+
 }
