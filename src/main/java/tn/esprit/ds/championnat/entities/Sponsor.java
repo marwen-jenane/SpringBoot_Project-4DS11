@@ -3,6 +3,7 @@ package tn.esprit.ds.championnat.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -24,6 +25,13 @@ public class Sponsor {
 
     private Boolean bloquerContrat;
 
+    private Boolean archived;
+
+    private LocalDate dateCreation;
+
+    private LocalDate dateDerniereModification;
+
     @OneToMany(mappedBy = "sponsor")
     private List<Contrat>contrats;
+
 }
